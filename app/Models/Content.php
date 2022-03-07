@@ -20,4 +20,8 @@ class Content extends Model
     public function type() {
         return $this->belongsTo(ContentType::class);
     }
+
+    public function tags() {
+        return $this->belongsToMany(Content::class, 'content_content_tag');
+    }
 }

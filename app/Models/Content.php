@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Person extends Model
+class Content extends Model
 {
     use HasFactory;
 
@@ -13,7 +13,11 @@ class Person extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function contents() {
-        return $this->hasMany(Content::class);
+    public function category() {
+        return $this->belongsTo(CategoryContent::class);
+    }
+
+    public function type() {
+        return $this->belongsTo(ContentType::class);
     }
 }

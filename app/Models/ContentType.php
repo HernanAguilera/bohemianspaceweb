@@ -12,4 +12,8 @@ class ContentType extends Model
     public function contents() {
         return $this->hasMany(Content::class);
     }
+
+    public function fields() {
+        return $this->belongsToMany(ContentField::class, 'content_field_content_type');
+    }
 }

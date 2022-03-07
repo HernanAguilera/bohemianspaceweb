@@ -12,4 +12,8 @@ class ContentField extends Model
     public function contents() {
         return $this->belongsToMany(Content::class, 'content_content_field')->withPivot('value');
     }
+
+    public function types() {
+        return $this->belongsToMany(ContentType::class, 'content_field_content_type');
+    }
 }

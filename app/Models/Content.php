@@ -22,6 +22,10 @@ class Content extends Model
     }
 
     public function tags() {
-        return $this->belongsToMany(Content::class, 'content_content_tag');
+        return $this->belongsToMany(Tag::class, 'content_content_tag');
+    }
+
+    public function fields() {
+        return $this->belongsToMany(ContentField::class, 'content_content_field')->withPivot('value');
     }
 }

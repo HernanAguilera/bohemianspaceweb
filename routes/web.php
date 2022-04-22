@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlbumController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::controller(AlbumController::class)->group(function() {
+    Route::get('/albums', 'index');
+    Route::get('/albums/create', 'create');
+    Route::post('/albums/store', 'store');
+});
 
 require __DIR__.'/auth.php';

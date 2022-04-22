@@ -9,6 +9,9 @@ class ContentType extends Model
 {
     use HasFactory;
 
+    public const ALBUM = 'album';
+    public const PHOTO = 'photo';
+
     public function contents() {
         return $this->hasMany(Content::class);
     }

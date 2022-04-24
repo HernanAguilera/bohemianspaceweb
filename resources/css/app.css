@@ -1,3 +1,36 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import './public/footer.css';
+@import './public/nav.css';
+
+:root {
+    --primary-color: #8C489F;
+    --primary-color2: #C3C3E5;
+    --white: #EEE;
+}
+
+body.public {
+    @apply leading-normal tracking-normal;
+    color: var(--white);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+
+/* Styles */
+.gradient {
+    background: linear-gradient(90deg, var(--primary-color) 0%,  var(--primary-color2) 100%);
+}
+#lightgallery {
+  background-color: white;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+#lightgallery a {
+  margin: .5em;
+}
+#lightgallery img {
+  max-height: 200px;
+}

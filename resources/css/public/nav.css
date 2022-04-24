@@ -1,0 +1,19 @@
+nav#header {
+    @apply fixed w-full z-30 top-0 text-white;
+}
+
+nav#header > div {
+    @apply w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2;
+}
+
+nav#header > hr {
+    @apply border-b border-gray-100 opacity-25 my-0 py-0;
+}
+
+#header .logo-container {
+    @apply pl-4 flex items-center;
+}
+
+#header .logo-container a {
+    @apply text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl;
+}

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>
-        Bohemian Space
+        {{ config('app.name', 'Laravel') }}
     </title>
     <meta name="description" content="Simple landind page" />
     <meta name="keywords" content="" />
@@ -17,24 +17,9 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
     <link rel="stylesheet" href="https://unpkg.com/lightgallery@2.4.0/css/lightgallery-bundle.min.css">
-    <style>
-        .gradient {
-            background: linear-gradient(90deg, #8C489F 0%,  #C3C3E5 100%);
-        }
-        #lightgallery {
-          background-color: white;
-          padding-top: 2em;
-          padding-bottom: 1em;
-        }
-        #lightgallery a {
-          margin: .5em;
-        }
-        #lightgallery img {
-          max-height: 200px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/app.css">
     </head>
-    <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+    <body class="public gradient">
         @include('components.public.nav')
         @include('components.public.hero')
         {{-- @include('components.public.features')

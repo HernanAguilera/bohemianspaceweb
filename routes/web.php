@@ -22,10 +22,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::controller(AlbumController::class)->group(function() {
-    Route::get('/albums', 'index');
-    Route::get('/albums/create', 'create');
-    Route::post('/albums/store', 'store');
+Route::middleware(['auth'])->group(function() {
+    Route::controller(AlbumController::class)->group(function() {
+        Route::get('/albums', 'index');
+        Route::get('/albums/create', 'create');
+        Route::post('/albums/store', 'store');
+    });
 });
+
 
 require __DIR__.'/auth.php';
